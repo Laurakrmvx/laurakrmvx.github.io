@@ -10,12 +10,6 @@ Project pages
 - Contact (`contact.html`) — contact form layout
 - Cart (`cart.html`) — static cart layout
 
-Live demo / Deployment
-
-Add your published site link here (GitHub Pages / Netlify):
-
-https://<your-username>.github.io/<repo-name>/
-
 Requirements checklist (how this project maps to the midterm rules)
 
 1. General structure
@@ -63,24 +57,3 @@ Files in this repo
 How to preview locally
 
 From the file explorer: open `index.html` in your browser.
-
-From PowerShell:
-
-```powershell
-start 'c:\Users\Laura\Desktop\Midterm_web\index.html'
-```
-
-Deployment
-
-- To publish on GitHub Pages: push this repository to GitHub, then enable GitHub Pages in the repository settings (choose the `main` branch or `/docs` folder). The site will be available at `https://<your-username>.github.io/<repo-name>/`.
-- Alternatively use Netlify: drag-and-drop the project folder or connect GitHub repository to publish.
-
-Notes, gaps, and recommended improvements before submission
-
-- Table: The spec requires at least one table (pricing or comparison). If you need a table for grading, add a pricing table to `products.html` or a schedule table on `about.html`.
-- Image optimization: add `loading="lazy"` to product images and consider resizing large images for better load times.
-- Accessibility: add `alt` text for all images (several product images currently have empty `alt` attributes). Ensure form inputs have associated `<label>` elements.
-- Deployment link: add the final GitHub Pages/Netlify URL here once deployed so the instructor can access your work.
-- Defense prep: be ready to explain your HTML structure, why you chose Flexbox/Grid for each layout, your responsive choices and any CSS variables or positioning you used.
-
-If you'd like, I can implement the missing table, add `loading="lazy"` to images, improve alt text, or deploy the site to GitHub Pages and paste the final URL into this README. Tell me which items you'd like me to complete and I will implement them.
