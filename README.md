@@ -1,6 +1,6 @@
 # Beauty Shop — Midterm Project (Static Website)
 
-This repository contains a static, multi-page website for a fictional cosmetics store called "Beauty Shop." It was built to satisfy the midterm project requirements for the web development course and demonstrates semantic HTML, modern CSS layout (Flexbox and Grid), responsive design, and consistent styling.
+This repository contains a static, multi-page website for a fictional cosmetics store called "Rom&nd" It was built to satisfy the midterm project requirements for the web development course and demonstrates semantic HTML, modern CSS layout (Flexbox and Grid), responsive design, and consistent styling.
 
 Project pages
 
