@@ -1,10 +1,10 @@
 /*Common Styles*/
 :root {
   --primary-color: #0d0d21;
-  --secondary-color: #2a2a60;
-  --background-color: #d2b4b8;
-  --font-family: "Poppins", sans-serif;
-  --font-size: 16px;
+  --secondary-color: hsl(240, 39%, 27%);
+  --background-color: #f8e8ee;
+  --font-family: Playfair + Display;
+  --font-size: 20px;
 }
 
 body {
@@ -19,8 +19,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 60px;
-  border-bottom: 1px solid #eee;
+  padding: 20px 60px;
+  border-bottom: 1px solid #e6c4ce;
 }
 
 header .logo {
@@ -65,13 +65,18 @@ footer {
 }
 
 .hero h1 {
-  font-size: 28px;
+  font-size: 35px;
   font-weight: 700;
 }
 
 .hero p {
   color: #555;
   margin-top: 10px;
+}
+hr {
+  border: none;
+  border-top: 3px solid #f2bed1;
+  margin: 10px 0;
 }
 
 .hero button {
@@ -95,9 +100,20 @@ footer {
   gap: 20px;
   padding: 40px 60px;
 }
+.products button {
+  background-color: #f2bed1;
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 13px;
+}
+.products button:hover {
+  background-color: #5c8991;
+}
 
 .card {
-  border: 1px solid #eee;
+  border: 2px solid #f2bed1;
   border-radius: 10px;
   padding: 15px;
   text-align: center;
@@ -151,7 +167,7 @@ footer {
 }
 
 .about-box {
-  border: 1px solid #eee;
+  border: 1px solid #f2bed1;
   padding: 20px;
   border-radius: 10px;
 }
@@ -167,7 +183,7 @@ footer {
 
 .contact-form,
 .contact-info {
-  border: 1px solid #eee;
+  border: 1px solid #f2bed1;
   border-radius: 10px;
   padding: 25px;
   width: 300px;
@@ -195,21 +211,20 @@ footer {
 /*Cart Section*/
 .cart {
   text-align: center;
-  padding: 80px 20px;
+  padding: 30px 20px;
 }
 
 .cart button {
-  background-color: var(--primary-color);
-  color: #fff;
+  background-color: #f2bed1;
+  font-size: 18px;
+  color: #ffffff;
   border: none;
-  padding: 10px 25px;
-  border-radius: 8px;
-  margin-top: 20px;
-  cursor: pointer;
+  padding: 10px 10px;
+  margin: 0;
+  border-radius: 17px;
 }
-
 .cart button:hover {
-  background-color: var(--secondary-color);
+  background-color: #5c8991;
 }
 
 /*Cart Table Styles*/
@@ -223,7 +238,7 @@ footer {
 .cart-table td {
   padding: 15px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid #f2bed1;
 }
 
 .cart-table th {
@@ -250,17 +265,18 @@ footer {
   color: var(--primary-color);
 }
 
-.checkout-btn {
-  background-color: var(--secondary-color);
-  color: white;
+.cart-total button {
+  background-color: var(--primary-color);
+  color: #fff;
   border: none;
-  padding: 10px 20px;
+  font-size: 13px;
+  padding: 10px 25px;
   border-radius: 8px;
+  margin-top: 20px;
   cursor: pointer;
 }
-
-.checkout-btn:hover {
-  background-color: var(--primary-color);
+.cart-total button:hover {
+  background-color: var(--secondary-color);
 }
 
 /* Media Queries for Responsiveness */
