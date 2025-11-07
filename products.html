@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Beauty Shop | Products</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_for_js.css" />
   </head>
   <body>
     <header>
@@ -32,7 +33,7 @@
           <p>Makeup</p>
           <p><strong>$25.99</strong></p>
           <button>View</button>
-          <button>Add to Cart</button>
+          <button class="add-to-cart" data-product-id="1">Add to Cart</button>
         </div>
         <div class="card">
           <img
@@ -43,7 +44,7 @@
           <p>Makeup</p>
           <p><strong>$18.99</strong></p>
           <button>View</button>
-          <button>Add to Cart</button>
+          <button class="add-to-cart" data-product-id="2">Add to Cart</button>
         </div>
         <div class="card">
           <img
@@ -54,7 +55,7 @@
           <p>Skincare</p>
           <p><strong>$32.99</strong></p>
           <button>View</button>
-          <button>Add to Cart</button>
+          <button class="add-to-cart" data-product-id="3">Add to Cart</button>
         </div>
         <div class="card">
           <img
@@ -65,7 +66,7 @@
           <p>Makeup</p>
           <p><strong>$32.99</strong></p>
           <button>View</button>
-          <button>Add to Cart</button>
+          <button class="add-to-cart" data-product-id="4">Add to Cart</button>
         </div>
         <div class="card">
           <img
@@ -77,7 +78,7 @@
           <p>Makeup</p>
           <p><strong>$32.99</strong></p>
           <button>View</button>
-          <button>Add to Cart</button>
+          <button class="add-to-cart" data-product-id="5">Add to Cart</button>
         </div>
         <div class="card">
           <img
@@ -89,7 +90,7 @@
           <p>Makeup</p>
           <p><strong>$32.99</strong></p>
           <button>View</button>
-          <button>Add to Cart</button>
+          <button class="add-to-cart" data-product-id="6">Add to Cart</button>
         </div>
         <div class="card">
           <img
@@ -101,7 +102,7 @@
           <p>Makeup</p>
           <p><strong>$32.99</strong></p>
           <button>View</button>
-          <button>Add to Cart</button>
+          <button class="add-to-cart" data-product-id="7">Add to Cart</button>
         </div>
         <div class="card">
           <img
@@ -113,11 +114,13 @@
           <p>Makeup</p>
           <p><strong>$32.99</strong></p>
           <button>View</button>
-          <button>Add to Cart</button>
+          <button class="add-to-cart" data-product-id="8">Add to Cart</button>
         </div>
       </section>
     </main>
 
     <footer>© 2025 Beauty Shop. All rights reserved.</footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="products.js"></script>
   </body>
 </html>
