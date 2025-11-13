@@ -307,3 +307,86 @@ hr {
     padding: 15px;
   }
 }
+
+/* Cart Table Styles */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #f2bed1;
+}
+
+.cart-table th {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.cart-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.cart-table tbody tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+/* Total Price Section */
+.cart-total {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.cart-total h3 {
+  font-size: 24px;
+  color: var(--primary-color);
+}
+
+.cart-total button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  padding: 10px 25px;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.cart-total button:hover {
+  background-color: var(--secondary-color);
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cart-actions .continue-shopping button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+}
+
+.cart-actions .continue-shopping button:hover {
+  background-color: var(--secondary-color);
+}
+
+.cart-actions #clear-cart {
+  background-color: #ff6b6b;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cart-actions #clear-cart:hover {
+  background-color: #ff4d4d;
+}

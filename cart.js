@@ -1,66 +1,87 @@
+// Cart functionality
 $(document).ready(function () {
-  // Display cart items from localStorage
-  function displayCart() {
-    const raw = localStorage.getItem("cart");
-    console.log("[cart.js] localStorage raw:", raw);
-    const cart = JSON.parse(raw) || [];
-    console.log("[cart.js] parsed cart:", cart);
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartItemsContainer = $("#cart-items");
+  const totalPriceElement = $("#total-price");
 
-    const cartList = $("#cart-items");
-    cartList.empty();
+  // Function to update cart display
+  function updateCart() {
+    cartItemsContainer.empty();
     let total = 0;
 
-    if (cart.length === 0) {
-      cartList.append('<p class="empty-cart">Your cart is empty.</p>');
-    } else {
-      cart.forEach((item, index) => {
-        const price =
-          parseFloat(
-            (item.price || "").toString().replace(/[^0-9.\-]+/g, "")
-          ) || 0;
-        total += price;
+    cart.forEach((item, index) => {
+      total += item.price * item.quantity;
+      cartItemsContainer.append(`
+        <tr>
+          <td>${item.name}</td>
+          <td>${item.price}</td>
+          <td>
+            <input type="number" value="${
+              item.quantity
+            }" min="1" data-index="${index}" class="quantity-input" />
+          </td>
+          <td>${(item.price * item.quantity).toFixed(2)}</td>
+          <td><button class="remove-item" data-index="${index}">Remove</button></td>
+        </tr>
+      `);
+    });
 
-        const itemElement = $(
-          `
-								<div class="cart-item" data-index="${index}">
-										<h3>${item.name}</h3>
-										<p>${item.price}</p>
-										<button class="remove-item">Remove</button>
-								</div>
-						`
-        )
-          .hide()
-          .fadeIn(300);
-
-        cartList.append(itemElement);
-      });
-    }
-
-    $("#cart-total").text(`Total: $${total.toFixed(2)}`);
+    totalPriceElement.text(total.toFixed(2));
   }
 
-  // Remove single item
-  $(document).on("click", ".remove-item", function () {
-    const index = $(this).closest(".cart-item").data("index");
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    console.log("[cart.js] removing index", index, "from cart", cart);
+  // Function to remove item from cart
+  function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+  }
 
-    $(this)
-      .closest(".cart-item")
-      .slideUp(300, function () {
-        cart.splice(index, 1);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        displayCart();
-      });
+  // Function to update item quantity
+  function updateQuantity(index, quantity) {
+    if (quantity < 1) return;
+    cart[index].quantity = quantity;
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+  }
+
+  // Handle item removal
+  $(document).on("click", ".remove-item", function () {
+    const index = $(this).data("index");
+    removeItem(index);
+  });
+
+  // Handle quantity change
+  $(document).on("change", ".quantity-input", function () {
+    const index = $(this).data("index");
+    const quantity = parseInt($(this).val());
+    updateQuantity(index, quantity);
   });
 
   // Clear cart
   $("#clear-cart").click(function () {
-    console.log("[cart.js] clearing cart");
     localStorage.removeItem("cart");
-    displayCart();
+    cart = [];
+    updateCart();
   });
 
-  // Initial render
-  displayCart();
+  // Initialize cart
+  updateCart();
+});
+
+function updateTotalPrice() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || []; // Получаем корзину из localStorage
+  let total = 0;
+
+  // Проходим по всем товарам в корзине и считаем общую стоимость
+  cart.forEach((item) => {
+    total += item.price * item.quantity; // Добавляем стоимость товара с учетом его количества
+  });
+
+  // Обновляем отображение общей суммы
+  $("#total-price").text(`$${total.toFixed(2)}`); // Форматируем и обновляем элемент с ID total-price
+}
+
+// Вызовем эту функцию при загрузке страницы, чтобы инициализировать отображение
+$(document).ready(function () {
+  updateTotalPrice(); // Обновляем общую сумму при загрузке страницы
 });
